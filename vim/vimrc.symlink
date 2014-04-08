@@ -1,34 +1,116 @@
-" A minimal vimrc for new vim users to start with.
-"
-" Referenced here: http://vimuniversity.com/samples/your-first-vimrc-should-be-nearly-empty
-"
-" Original Author:   Bram Moolenaar <Bram@vim.org>
-" Made more minimal by:  Ben Orenstein
-" Last change:           2012 Jan 20
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-
-"  If you don't understand a setting in here, just type ':h setting'.
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle..."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+
+" required for vundle
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Define bundles via Github repos
+
+" Solarized colorscheme
+Bundle 'altercation/vim-colors-solarized'
+" Shows a git diff in the gutter
+Bundle 'airblade/vim-gitgutter'
+" Git wrapper so awesome, it should be illegal
+Bundle 'tpope/vim-fugitive'
+" Lean & mean status/tabline
+Bundle 'bling/vim-airline'
+" Easily delete, change and add such surroundings in pairs
+Bundle 'tpope/vim-surround'
+" Fuzzy file, buffer, mru, tag, etc finder
+Bundle 'kien/ctrlp.vim'
+
+" Installing plugins the first time
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
-" Switch syntax highlighting on
-set t_Co=256
-set background=dark
+" Always show status bar
+set ls=2
+
+" Incremental search
+set incsearch
+
+" Syntax highlight on
 syntax on
 
-" Enable file type detection and do language-dependent indenting.
-filetype plugin indent on
+" Line numbers
+set nu
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+" Allow plugins by file type
+filetype plugin on
+filetype indent on
+
+" Tabs and spaces handling
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    " ag is fast enough that CtrlP doesn't need to cache
+    let g:ctrlp_use_caching = 0
+endif
+
+" Fix some problems with gitgutter and other plugins (originally jedi-vim, but
+" left just in case, and it's faster)
+let g:gitgutter_eager = 0
+let g:gitgutter_realtime = 0
+
+" Use 256 colors when possible
+if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
+        let &t_Co = 256
+    " color
+    set background=dark
+    let g:solarized_termcolors = 256
+    colorscheme solarized
+else
+    " color
+    colorscheme delek
+endif
+
+" When scrolling, keep cursor 3 lines away from screen border
+set scrolloff=3
+
+" Vim-airline settings
+let g:airline_powerline_fonts = 0
+let g:airline_theme = 'solarized'
+let g:airline#extensions#whitespace#enabled = 0
