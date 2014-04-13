@@ -24,8 +24,8 @@ Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
 
-" Solarized colorscheme
-Bundle 'altercation/vim-colors-solarized'
+" Tomorrow colorscheme
+Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
 " Shows a git diff in the gutter
 Bundle 'airblade/vim-gitgutter'
 " Git wrapper so awesome, it should be illegal
@@ -123,8 +123,7 @@ if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
         let &t_Co = 256
     " color
     set background=dark
-    let g:solarized_termcolors = 256
-    colorscheme solarized
+    colorscheme Tomorrow-Night-Eighties
 else
     " color
     colorscheme delek
@@ -135,5 +134,5 @@ set scrolloff=3
 
 " Vim-airline settings
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'tomorrow'
 let g:airline#extensions#whitespace#enabled = 0
