@@ -32,8 +32,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
 " Pairs of handy bracket mappings
 Bundle 'tpope/vim-unimpaired'
-" Lean & mean status/tabline
-Bundle 'bling/vim-airline'
+" A light and configurable statusline/tabline for Vim
+Bundle 'itchyny/lightline.vim'
 " Easily delete, change and add such surroundings in pairs
 Bundle 'tpope/vim-surround'
 " Fuzzy file, buffer, mru, tag, etc finder
@@ -122,7 +122,6 @@ let g:gitgutter_realtime = 0
 if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
         let &t_Co = 256
     " color
-    set background=dark
     colorscheme Tomorrow-Night-Eighties
 else
     " color
@@ -132,7 +131,7 @@ endif
 " When scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
 
-" Vim-airline settings
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'tomorrow'
-let g:airline#extensions#whitespace#enabled = 0
+" Vim-lightline settings
+let g:lightline = {
+    \ 'colorscheme': 'Tomorrow_Night_Eighties',
+    \ }
