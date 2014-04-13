@@ -30,6 +30,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'airblade/vim-gitgutter'
 " Git wrapper so awesome, it should be illegal
 Bundle 'tpope/vim-fugitive'
+" Pairs of handy bracket mappings
+Bundle 'tpope/vim-unimpaired'
 " Lean & mean status/tabline
 Bundle 'bling/vim-airline'
 " Easily delete, change and add such surroundings in pairs
@@ -53,11 +55,14 @@ set ls=2
 " Incremental search
 set incsearch
 
-" Syntax highlight on
-syntax on
+" Highlight current line
+set cursorline
 
 " Line numbers
 set nu
+
+" Syntax highlight on
+syntax on
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -68,6 +73,24 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Allow plugins by file type
 filetype plugin on
 filetype indent on
+
+augroup vimrcEx
+    autocmd!
+
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+
+    " Set syntax highlighting for specific file types
+    autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+    " autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+    " Enable spellchecking for Markdown
+    autocmd FileType markdown setlocal spell
+
+    " Automatically wrap at 80 characters for Markdown
+    autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+augroup END
+
 
 " Tabs and spaces handling
 set expandtab
