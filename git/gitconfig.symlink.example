@@ -37,7 +37,7 @@
     ff = only
 
 [apply]
-    whitespace = nowarn
+    tool = vimdiff
 
 [mergetool]
     keepBackup = false
