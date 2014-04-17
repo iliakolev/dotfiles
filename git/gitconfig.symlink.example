@@ -48,6 +48,7 @@
 
 [help]
         autocorrect = 1
+
 [push]
     # See `git help config` (search for push.default)
     # for more information on different options of the below setting.
