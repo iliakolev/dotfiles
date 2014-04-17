@@ -33,6 +33,7 @@
 
 [commit]
     template = ~/.gitmessage
+
 [merge]
     ff = only
 
