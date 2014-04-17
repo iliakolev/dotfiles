@@ -37,10 +37,10 @@
     ff = only
 
 [apply]
-    tool = vimdiff
+    whitespace = nowarn
 
 [mergetool]
-    keepBackup = false
+    tool = vimdiff
 
 [difftool]
     prompt = false
