@@ -94,7 +94,8 @@ augroup vimrcEx
     autocmd BufRead,BufNewFile Appraisals set filetype=ruby
     autocmd BufRead,BufNewFile *.md set filetype=markdown
 
-    " Enable spellchecking for Markdown
+    " Enable spellchecking for specific file types
+    autocmd Filetype gitcommit setlocal spell textwidth=72
     autocmd FileType markdown setlocal spell
 
     " Automatically wrap at 80 characters for Markdown
@@ -145,6 +146,20 @@ set scrolloff=3
 let g:lightline = {
     \ 'colorscheme': 'Tomorrow_Night_Eighties',
     \ }
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Make splitting Vim windows easier
+map <leader>; <C-W>s
+map <leader>` <C-W>v
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open = 1
