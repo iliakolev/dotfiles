@@ -38,6 +38,8 @@ Bundle 'itchyny/lightline.vim'
 Bundle 'tpope/vim-surround'
 " Fuzzy file, buffer, mru, tag, etc finder
 Bundle 'kien/ctrlp.vim'
+" Syntax checking hacks for vim
+Bundle 'scrooloose/syntastic'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -135,3 +137,7 @@ set scrolloff=3
 let g:lightline = {
     \ 'colorscheme': 'Tomorrow_Night_Eighties',
     \ }
+
+" Configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
+let g:syntastic_html_checkers = ['w3']
