@@ -82,9 +82,17 @@ augroup vimrcEx
     " For all text files set 'textwidth' to 78 characters.
     autocmd FileType text setlocal textwidth=78
 
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it for commit messages, when the position is invalid, or when
+    " inside an event handler (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+
     " Set syntax highlighting for specific file types
     autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-    " autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
 
     " Enable spellchecking for Markdown
     autocmd FileType markdown setlocal spell
@@ -139,6 +147,6 @@ let g:lightline = {
     \ }
 
 " Configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open = 1
 let g:syntastic_html_checkers = ['w3']
 let g:syntastic_scss_checkers = ['scss_lint']
