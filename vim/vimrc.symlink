@@ -161,6 +161,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Get rid of the delay when hitting esc!
+set noesckeys
+
+" (Hopefully) removes the delay when hitting esc in insert mode
+set noesckeys
+set ttimeout
+set ttimeoutlen=1
+
 " Configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open = 1
 let g:syntastic_html_checkers = ['w3']
