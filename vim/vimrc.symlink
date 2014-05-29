@@ -1,8 +1,14 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+" ----------------------------------------------------
+"   Initialize
+" ----------------------------------------------------
 
-" Setting up Vundle - the vim plugin bundler
+set nocompatible
+filetype off
+
+" ----------------------------------------------------
+"   Setting up Vundle
+" ----------------------------------------------------
+
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 if !filereadable(vundle_readme)
@@ -13,32 +19,26 @@ if !filereadable(vundle_readme)
     let iCanHazVundle=0
 endif
 
-" required for vundle
-filetype off
+" ----------------------------------------------------
+"   Vundle
+" ----------------------------------------------------
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-" Define bundles via Github repos
+" ----------------------------------------------------
+"   Bundles
+" ----------------------------------------------------
 
-" Tomorrow colorscheme
 Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
-" Shows a git diff in the gutter
 Bundle 'airblade/vim-gitgutter'
-" Git wrapper so awesome, it should be illegal
 Bundle 'tpope/vim-fugitive'
-" Pairs of handy bracket mappings
 Bundle 'tpope/vim-unimpaired'
-" A light and configurable statusline/tabline for Vim
 Bundle 'itchyny/lightline.vim'
-" Easily delete, change and add such surroundings in pairs
 Bundle 'tpope/vim-surround'
-" Fuzzy file, buffer, mru, tag, etc finder
 Bundle 'kien/ctrlp.vim'
-" Syntax checking hacks for vim
 Bundle 'scrooloose/syntastic'
 
 " Installing plugins the first time
