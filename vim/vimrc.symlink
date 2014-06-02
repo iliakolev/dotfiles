@@ -51,6 +51,15 @@ if iCanHazVundle == 0
     :BundleInstall
 endif
 
+" ----------------------------------------------------
+"   Lightline
+" ----------------------------------------------------
+
+let g:lightline = {
+    \ 'colorscheme': 'Tomorrow_Night_Eighties',
+    \ }
+
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
@@ -144,11 +153,6 @@ endif
 
 " When scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
-
-" Vim-lightline settings
-let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night_Eighties',
-    \ }
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
