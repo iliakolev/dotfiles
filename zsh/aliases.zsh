@@ -4,3 +4,6 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # Vim
 alias v='vim'
+
+# Unix
+alias ll='ls -la'
