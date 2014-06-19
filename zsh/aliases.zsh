@@ -7,6 +7,10 @@ alias v='vim'
 
 # Unix
 alias ll='ls -la'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # Faster npm for Europeans
-command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu/"
+command -v npm > /dev/null && alias npme='npm --registry http://registry.npmjs.eu/'
