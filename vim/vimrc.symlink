@@ -98,9 +98,6 @@ filetype indent on
 augroup vimrcEx
     autocmd!
 
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
-
     " When editing a file, always jump to the last known cursor position.
     " Don't do it for commit messages, when the position is invalid, or when
     " inside an event handler (happens when dropping a file on gvim).
@@ -157,6 +154,10 @@ else
     " color
     colorscheme delek
 endif
+
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
 
 " When scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
