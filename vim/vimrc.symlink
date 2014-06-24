@@ -145,15 +145,28 @@ endif
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
 
-" Use 256 colors when possible
+" ----------------------------------------------------
+"   Syntax Highlighting & Theme
+" ----------------------------------------------------
+
 if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
-        let &t_Co = 256
-    " color
+    let &t_Co = 256
     colorscheme Tomorrow-Night-Eighties
 else
-    " color
     colorscheme delek
 endif
+
+" ----------------------------------------------------
+"   Mappings
+" ----------------------------------------------------
+
+" ----- General Mappings ----- "
+
+" Change leader key
+let mapleader = ","
+
+nmap <space> :
+imap jj <esc>
 
 " Make it obvious where 80 characters is
 set textwidth=80
