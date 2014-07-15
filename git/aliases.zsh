@@ -16,7 +16,7 @@ alias gd='git diff'
 alias gfb='git checkout -b'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gl='git pull --prune'
-alias go='git checkout'
+alias gco='git checkout'
 alias gm='git merge'
 alias gmff='git merge --no-ff'
 alias gp='git push origin HEAD'
