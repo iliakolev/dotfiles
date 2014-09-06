@@ -85,12 +85,6 @@ set nu
 " Syntax highlight on
 syntax on
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " Allow plugins by file type
 filetype plugin on
 filetype indent on
@@ -166,6 +160,22 @@ endif
 nnoremap ; :
 inoremap jk <esc>
 
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Window sizing
+nnoremap + <C-w>>
+nnoremap _ <C-w><
+
 " Change leader key
 let mapleader = ","
 
@@ -184,15 +194,10 @@ set splitright
 map <leader>; <C-W>s
 map <leader>` <C-W>v
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " (Hopefully) removes the delay when hitting esc in insert mode
 set ttimeout
 set ttimeoutlen=1
 
 " Select-all (don't need confusing increment C-a)
 noremap <C-a> gg0vG$
+
