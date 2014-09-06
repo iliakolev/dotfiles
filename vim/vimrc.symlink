@@ -176,8 +176,10 @@ nnoremap <C-l> <C-w>l
 nnoremap + <C-w>>
 nnoremap _ <C-w><
 
-" Change leader key
-let mapleader = ","
+" Save file
+noremap <C-s> <esc>:w<cr>
+inoremap <C-s> <esc>:w<cr>
+
 
 " Make it obvious where 80 characters is
 set textwidth=80
