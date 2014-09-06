@@ -180,6 +180,8 @@ nnoremap _ <C-w><
 noremap <C-s> <esc>:w<cr>
 inoremap <C-s> <esc>:w<cr>
 
+" Copy to end of line
+nnoremap Y y$
 
 " Make it obvious where 80 characters is
 set textwidth=80
