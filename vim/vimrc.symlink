@@ -156,17 +156,18 @@ else
     colorscheme delek
 endif
 
-" ----------------------------------------------------
+" ====================================================
 "   Mappings
-" ----------------------------------------------------
+" ====================================================
 
-" ----- General Mappings ----- "
+" ===== General ===== "
+
+" Better defaults
+nnoremap ; :
+inoremap jk <esc>
 
 " Change leader key
 let mapleader = ","
-
-nmap <space> :
-imap jj <esc>
 
 " Make it obvious where 80 characters is
 set textwidth=80
