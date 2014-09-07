@@ -260,3 +260,8 @@ set splitright
 "
 " Switch between buffers
 nnoremap ,, <C-^>
+
+" == H == "
+
+" Horizontal split
+nnoremap <leader>h <C-w>s<C-w>j
