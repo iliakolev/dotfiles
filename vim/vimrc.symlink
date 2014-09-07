@@ -270,3 +270,6 @@ nnoremap <leader>h <C-w>s<C-w>j
 
 " Duplicate current line, paste after
 nnoremap <leader>p Yp
+
+" Nice paste
+nnoremap <leader>P :set paste<cr>o<esc>"*]p :set nopaste<cr>
