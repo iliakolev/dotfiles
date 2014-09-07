@@ -279,7 +279,10 @@ nnoremap <leader>P :set paste<cr>o<esc>"*]p :set nopaste<cr>
 " Quit
 nnoremap <leader>q :q<cr>
 
+" Open .vimrc
+nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
+
 " == V == "
 
 " Vertical split
-nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>v <C->v<C-w>l
