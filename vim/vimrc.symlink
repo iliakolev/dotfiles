@@ -279,6 +279,8 @@ nnoremap <leader>P :set paste<cr>o<esc>"*]p :set nopaste<cr>
 " Quit
 nnoremap <leader>q :q<cr>
 
+" == R == "
+
 " Open .vimrc
 nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
 
@@ -286,3 +288,8 @@ nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
 
 " Vertical split
 nnoremap <leader>v <C->v<C-w>l
+
+" == Y == "
+
+" Copy line, paste before current line
+nnoremap <leader>y YP
