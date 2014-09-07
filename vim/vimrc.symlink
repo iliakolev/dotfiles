@@ -273,3 +273,8 @@ nnoremap <leader>p Yp
 
 " Nice paste
 nnoremap <leader>P :set paste<cr>o<esc>"*]p :set nopaste<cr>
+
+" == Q == "
+
+" Quit
+nnoremap <leader>q :q<cr>
