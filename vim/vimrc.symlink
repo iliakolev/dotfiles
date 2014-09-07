@@ -265,3 +265,8 @@ nnoremap ,, <C-^>
 
 " Horizontal split
 nnoremap <leader>h <C-w>s<C-w>j
+
+" == P == "
+
+" Duplicate current line, paste after
+nnoremap <leader>p Yp
