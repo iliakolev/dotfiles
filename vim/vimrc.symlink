@@ -293,3 +293,8 @@ nnoremap <leader>v <C->v<C-w>l
 
 " Copy line, paste before current line
 nnoremap <leader>y YP
+
+" == Z == "
+
+" Quicker action to suspend Vim ('fg' to return)
+nnoremap <leader>z <C-z>
