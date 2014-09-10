@@ -11,11 +11,24 @@ filetype off
 "   General Configuration
 " ====================================================
 
-set number                     " Line numbers are good
-set backspace=indent,eol,start " Allow backspace in Insert mode
-set history=1000               " Store :cmdline history
-set visualbell                 " No sounds
-set autoread                   " Reload files changed outside of Vim
+" Line numbers are good
+set number
+
+" Allow backspace in Insert mode
+set backspace=indent,eol,start
+
+" Store :cmdline history
+set history=1000
+
+" No sounds
+set visualbell
+
+" Reload files changed outside of Vim
+set autoread
+
+" Controls how Vim flashes the screen. If empty, Vim does not flash the screen.
+set t_vb=
+
 set noshowmode
 set cursorline
 set mousehide
