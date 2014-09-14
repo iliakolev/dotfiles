@@ -235,7 +235,7 @@ endif
 "   Mappings
 " ====================================================
 
-" ===== General ===== "
+" ========== General ========== "
 
 " Better defaults
 nnoremap ; :
@@ -269,9 +269,9 @@ set splitbelow
 set splitright
 
 " ========== Leader ========== "
-"
+
 " == Non-Alphanumeric == "
-"
+
 " Switch between buffers
 nnoremap ,, <C-^>
 
