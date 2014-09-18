@@ -33,7 +33,6 @@ set noshowmode
 set cursorline
 set mousehide
 set ttyfast
-set showmatch
 set laststatus=2
 
 " This makes vim act like all other editors, buffers can
