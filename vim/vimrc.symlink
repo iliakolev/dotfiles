@@ -20,6 +20,9 @@ set backspace=indent,eol,start
 " Store :cmdline history
 set history=1000
 
+" Show incomplete commands
+set showcmd
+
 " No sounds
 set visualbell
 
