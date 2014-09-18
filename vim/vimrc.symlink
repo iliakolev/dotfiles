@@ -23,6 +23,9 @@ set history=1000
 " Show incomplete commands
 set showcmd
 
+" Don't show intro
+set shortmess+=I
+
 " No sounds
 set visualbell
 
