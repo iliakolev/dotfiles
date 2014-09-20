@@ -325,6 +325,9 @@ nnoremap <leader>q :q<cr>
 " Open .vimrc
 nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
 
+" Replace current search with...
+nnoremap <leader>rs :%s//
+
 " == V == "
 
 " Vertical split
