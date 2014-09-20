@@ -110,6 +110,9 @@ Plugin 'kien/ctrlp.vim'
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
+" The ultimate snippet solution
+Plugin 'SirVer/ultisnips'
+
 call vundle#end()
 filetype on
 
