@@ -5,7 +5,6 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-filetype off
 
 " ====================================================
 "   General Configuration
@@ -61,51 +60,85 @@ map , <leader>
 map <Space> <leader>
 
 " ====================================================
-"   Setting up Vundle
-" ====================================================
-
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle..."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-
-" ====================================================
 "   Vundle
 " ====================================================
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Required by Vundle
+filetype off
 
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+" Vundle manage Vundle
+Plugin 'gmarik/vundle'
+
+" ========== Bundles ========== "
+
+" Solarized
+Plugin 'altercation/vim-colors-solarized'
+
+" Shows a git diff in the 'gutter'
+Plugin 'airblade/vim-gitgutter'
+
+" Git wrapper
+Plugin 'tpope/vim-fugitive'
+
+" Pairs of handy bracket mappings
+Plugin 'tpope/vim-unimpaired'
+
+" Helpers for UNIX
+Plugin 'tpope/vim-eunuch'
+
+" Vim runtime files for Haml, Sass, and SCSS
+Plugin 'tpope/vim-haml'
+
+" Vim Markdown runtime files
+Plugin 'tpope/vim-markdown'
+
+" Expanding abbreviations
+Plugin 'mattn/emmet-vim'
+
+" Quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
+
+" A light and configurable statusline
+Plugin 'itchyny/lightline.vim'
+
+" Fuzzy file finder
+Plugin 'kien/ctrlp.vim'
+
+" Syntax checking
+Plugin 'scrooloose/syntastic'
+
+" The ultimate snippet solution
+Plugin 'SirVer/ultisnips'
+
+call vundle#end()
+filetype on
 
 " ====================================================
-"   Bundles
+"   Colors
 " ====================================================
 
-Bundle 'ChrisKempson/Vim-Tomorrow-Theme'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-surround'
-Bundle 'itchyny/lightline.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-
-" ====================================================
-"   Installing plugins the first time
-" ====================================================
-
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+    syntax on
 endif
+
+set t_Co=256
+let g:solarized_termtrans = 1
+
+set background=dark
+colorscheme solarized
+
+" ====================================================
+"   Solarized
+" ====================================================
+
+hi! LineNR guibg=NONE ctermbg=NONE
+hi FoldColumn ctermbg=NONE
+hi SignColumn ctermbg=NONE
 
 " ====================================================
 "   Turn off Swap Files
@@ -167,8 +200,8 @@ set smartcase
 " ====================================================
 
 let g:lightline = {
-    \ 'colorscheme': 'Tomorrow_Night_Eighties',
-    \ }
+    \ 'colorscheme': 'solarized_dark',
+   \ }
 
 " ====================================================
 "   Syntastic
@@ -178,12 +211,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_html_checkers = ['w3']
 let g:syntastic_scss_checkers = ['scss_lint']
 
-" Syntax highlight on
-syntax on
-
-" Allow plugins by file type
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 augroup vimrcEx
     autocmd!
@@ -224,17 +252,6 @@ endif
 " left just in case, and it's faster)
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
-
-" ====================================================
-"   Syntax Highlighting & Theme
-" ====================================================
-
-if &term =~? 'mlterm\|xterm\|xterm-256\|screen-256'
-    let &t_Co = 256
-    colorscheme Tomorrow-Night-Eighties
-else
-    colorscheme delek
-endif
 
 " ====================================================
 "   Mappings
