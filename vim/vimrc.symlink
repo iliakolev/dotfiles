@@ -302,6 +302,11 @@ nnoremap ,, <C-^>
 " Horizontal split
 nnoremap <leader>h <C-w>s<C-w>j
 
+" == L == "
+"
+" Clear the search buffer when hitting return
+nnoremap <silent> <leader>l :nohlsearch<cr>
+
 " == P == "
 
 " Duplicate current line, paste after
