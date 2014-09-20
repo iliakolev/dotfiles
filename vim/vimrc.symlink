@@ -113,6 +113,9 @@ Plugin 'scrooloose/syntastic'
 " The ultimate snippet solution
 Plugin 'SirVer/ultisnips'
 
+" Universal comment plugin
+Plugin 'vim-scripts/tComment'
+
 call vundle#end()
 filetype on
 
