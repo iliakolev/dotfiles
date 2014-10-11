@@ -39,13 +39,6 @@ bind -r j select-pane -D
 bind -r k select-pane -U
 bind -r l select-pane -R
 
-# Fix issue with tmux repeating -r the arrow directions (meaning when you
-# switch panes you can accidentally jump back to the other pane again)
-bind-key Up    select-pane -U
-bind-key Down  select-pane -D
-bind-key Left  select-pane -L
-bind-key Right select-pane -R
-
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
