@@ -145,6 +145,12 @@ set ignorecase
 set smartcase
 
 " ====================================================
+"   Emmet
+" ====================================================
+
+let g:user_emmet_expandabbr_key = 'qq'
+
+" ====================================================
 "   Lightline
 " ====================================================
 
@@ -207,6 +213,7 @@ endif
 " left just in case, and it's faster)
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
+
 
 " ====================================================
 "   Mappings
