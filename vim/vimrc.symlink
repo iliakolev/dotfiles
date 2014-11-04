@@ -12,6 +12,7 @@ set nocompatible
 
 " Line numbers are good
 set number
+set numberwidth=5
 
 " Allow backspace in Insert mode
 set backspace=indent,eol,start
