@@ -60,6 +60,10 @@ set fillchars+=vert:\
 map , <leader>
 map <Space> <leader>
 
+" Toggle spell check with <F5>
+map <F5> :setlocal spell! spelllang=en_us<cr>
+imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
+
 " ====================================================
 "   Vundle
 " ====================================================
