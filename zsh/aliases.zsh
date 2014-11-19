@@ -66,5 +66,8 @@ alias rm='rm -rf'
 
 alias v='vim'
 
+# vimrc editing
+alias ve='vim ~/.vimrc'
+
 # mimic vim functions
 alias :q='exit'
