@@ -57,6 +57,7 @@ alias localip="ifconfig | \
 alias c='clear'
 alias d='cd ~/.dotfiles'
 alias h='history'
+alias k9='kill -9'
 alias r='. ~/.zshrc'
 alias rm='rm -rf'
 
