@@ -227,7 +227,7 @@ let g:gitgutter_realtime = 0
 
 " Better defaults
 nnoremap ; :
-inoremap jk <esc>
+inoremap jj <esc>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
