@@ -15,6 +15,14 @@ snippet coss "Sub-section Comment Block"
 $0
 endsnippet
 
+snippet v "Define a variable"
+$${1:name}: ${2:value};
+endsnippet
+
+snippet vv "Set variable to other variable"
+$${1:name}: $${2:name};
+endsnippet
+
 snippet ex "@extend %placeholder;"
 @extend %${1:placeholder};
 endsnippet
