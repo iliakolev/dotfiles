@@ -1,4 +1,4 @@
-snippet cos "Section Comment Block"
+snippet cos "Section Comment Block" b
 // *************************************
 //
 //   #${1:SECTION TITLE}
@@ -8,29 +8,29 @@ snippet cos "Section Comment Block"
 $0
 endsnippet
 
-snippet coss "Sub-section Comment Block"
+snippet coss "Sub-section Comment Block" b
 //   #${1:SUB-SECTION TITLE}
 // *************************************
 
 $0
 endsnippet
 
-snippet v "Define a variable"
+snippet v "Define a variable" b
 $${1:name}: ${2:value};
 endsnippet
 
-snippet vv "Set variable to other variable"
+snippet vv "Set variable to other variable" b
 $${1:name}: $${2:name};
 endsnippet
 
-snippet ex "@extend %placeholder;"
+snippet ex "@extend %placeholder;" b
 @extend %${1:placeholder};
 endsnippet
 
-snippet exc "@extend .class;"
+snippet exc "@extend .class;" b
 @extend .${1:class};
 endsnippet
 
-snippet imp "@import '...';"
+snippet imp "@import '...';" b
 @import "${1:file}";
 endsnippet
