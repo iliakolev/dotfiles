@@ -1,3 +1,4 @@
 git/gitconfig.symlink
 log/*.log
 bundle/
+.netrwhist
