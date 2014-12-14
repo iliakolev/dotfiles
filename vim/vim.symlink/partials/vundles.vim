@@ -29,9 +29,6 @@ Plugin 'altercation/vim-colors-solarized'
 " Shows a git diff in the 'gutter'
 Plugin 'airblade/vim-gitgutter'
 
-" Perform all your vim insert mode completions with Tab
-Plugin 'ervandew/supertab'
-
 " True Sublime Text style multiple selections for Vim
 Plugin 'terryma/vim-multiple-cursors'
 
