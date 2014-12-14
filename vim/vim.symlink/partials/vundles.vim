@@ -29,6 +29,9 @@ Plugin 'altercation/vim-colors-solarized'
 " Shows a git diff in the 'gutter'
 Plugin 'airblade/vim-gitgutter'
 
+" Seamless navigation between tmux panes and vim splits
+Plugin 'christoomey/vim-tmux-navigator'
+
 " True Sublime Text style multiple selections for Vim
 Plugin 'terryma/vim-multiple-cursors'
 
