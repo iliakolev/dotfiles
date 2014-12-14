@@ -59,6 +59,9 @@ Plugin 'itchyny/lightline.vim'
 " Fuzzy file finder
 Plugin 'kien/ctrlp.vim'
 
+" HTML5 omnicomplete and syntax
+Plugin 'othree/html5.vim'
+
 " Syntax checking
 Plugin 'scrooloose/syntastic'
 
