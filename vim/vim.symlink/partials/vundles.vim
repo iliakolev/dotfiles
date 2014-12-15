@@ -59,8 +59,8 @@ Plugin 'tpope/vim-surround'
 " A light and configurable statusline
 Plugin 'itchyny/lightline.vim'
 
-" Fuzzy file finder
-Plugin 'kien/ctrlp.vim'
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " HTML5 omnicomplete and syntax
 Plugin 'othree/html5.vim'
