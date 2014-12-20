@@ -61,6 +61,9 @@ alias k9='kill -9'
 alias r='. ~/.zshrc'
 alias rm='rm -rf'
 
+# Pretty print the path
+alias path="echo $PATH | tr -s ':' '\n'"
+
 # ----------------------------------------------------
 #   Vim
 # ----------------------------------------------------
