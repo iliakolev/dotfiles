@@ -263,6 +263,10 @@ set splitright
 " Switch between buffers
 nnoremap ,, <C-^>
 
+" Jump to beginning and end of brace-surrounded blocks
+noremap [[ [{
+noremap ]] ]}
+
 " == H == "
 
 " Horizontal split
