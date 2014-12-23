@@ -48,3 +48,11 @@ snippet mq "A simple mixin to quickly generate whole media queries" b
 	$0
 }
 endsnippet
+
+snippet fs "Set font size" b
+@include font-size(${1:size}px);
+endsnippet
+
+snippet fsl "Set font size and line height" b
+@include font-size(${1:size}px, ${2:line-height});
+endsnippet
