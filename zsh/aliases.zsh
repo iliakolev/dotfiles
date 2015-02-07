@@ -62,7 +62,7 @@ alias r='. ~/.zshrc'
 alias rm='rm -i'
 
 # Pretty print the path
-alias path="echo $PATH | tr -s ':' '\n'"
+alias path='echo $PATH | tr -s ":" "\n"'
 
 # ----------------------------------------------------
 #   Vim
