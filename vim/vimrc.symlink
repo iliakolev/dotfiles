@@ -245,6 +245,12 @@ nnoremap <C-l> <C-w>l
 nnoremap + <C-w>>
 nnoremap _ <C-w><
 
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
 " Save file
 noremap <C-s> <esc>:w<cr>
 inoremap <C-s> <esc>:w<cr>
