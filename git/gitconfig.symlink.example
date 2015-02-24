@@ -13,6 +13,7 @@
 
 [alias]
     aa = add --all
+    ca = commit --amend -v
     co = checkout
     promote = !$ZSH/bin/git-promote
     wtf     = !$ZSH/bin/git-wtf
