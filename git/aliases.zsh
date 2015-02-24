@@ -10,7 +10,7 @@ fi
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
-alias gc='git commit'
+alias gc='git commit -v'
 alias gca='git commit -a'
 alias gd='git diff'
 alias gfb='git checkout -b'
