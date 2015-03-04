@@ -318,8 +318,14 @@ nnoremap <leader>v <C-w>v<C-w>l
 
 " == Y == "
 
-" Copy line, paste before current line
-nnoremap <leader>y YP
+" Invoke CtrlP in find buffer or find MRU file mode
+nnoremap <leader>y :CtrlPBuffer<cr>
+
+" Buffers (runs the delete buffer command on all open buffers)
+nnoremap <leader>yd :bufdo bd<cr>
+
+" Buffers list
+nnoremap <leader>yt :ls<cr>
 
 " == Z == "
 
