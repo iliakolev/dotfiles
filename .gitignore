@@ -1,4 +1,3 @@
 git/gitconfig.symlink
-log/*.log
-bundle/
-.netrwhist
+vim/vim.symlink/.netrwhist
+vim/vim.symlink/bundle/
