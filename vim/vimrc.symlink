@@ -49,8 +49,7 @@ set ttimeoutlen=1
 set fillchars+=vert:\
 
 " Change leader key
-map , <leader>
-map <Space> <leader>
+let mapleader = ','
 
 " Toggle spell check with <F5>
 map <F5> :setlocal spell! spelllang=en_us<cr>
@@ -156,6 +155,36 @@ let g:lightline = {
    \ }
 
 " ====================================================
+"   Speedups
+" ====================================================
+
+" Quick toggle between two files
+nnoremap <leader><leader> <C-^>
+
+" Make Y yank to end of line (like D, or C)
+nmap Y y$
+
+" Open .vimrc
+nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
+
+" Easy access to the start of the line
+nnoremap 0 ^
+
+" Quickly open a second window to view files side by side
+nmap <LEADER>vn :vnew<CR>
+nmap <LEADER>vs :vsplit<CR>
+
+" Move one line at a time, aka 'fine ajdustment'
+nnoremap j gj
+nnoremap k gk
+
+" Reselect pasted text. Mnem: 'Get pasted'
+nnoremap gp `[v`]
+
+" Go to position of last edit. Mnem: 'Go to Edit'
+nnoremap ge `.
+
+" ====================================================
 "   Syntastic
 " ====================================================
 
@@ -247,9 +276,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 noremap <C-s> <esc>:w<cr>
 inoremap <C-s> <esc>:w<cr>
 
-" Copy to end of line
-nnoremap Y y$
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -258,23 +284,14 @@ set splitright
 
 " == Non-Alphanumeric == "
 
-" Switch between buffers
-nnoremap ,, <C-^>
-
 " Jump to beginning and end of brace-surrounded blocks
 noremap [[ [{
 noremap ]] ]}
-
-" == H == "
-
-" Horizontal split
-nnoremap <leader>h <C-w>s<C-w>j
 
 " == L == "
 "
 " Clear the search buffer when hitting return
 nnoremap <silent> <leader>l :nohlsearch<cr>
-
 
 " == N == "
 "
@@ -305,16 +322,8 @@ nnoremap <leader>q :q<cr>
 
 " == R == "
 
-" Open .vimrc
-nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
-
 " Replace current search with...
 nnoremap <leader>rs :%s//
-
-" == V == "
-
-" Vertical split
-nnoremap <leader>v <C-w>v<C-w>l
 
 " == Y == "
 
