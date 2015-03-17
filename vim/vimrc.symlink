@@ -141,6 +141,40 @@ set ignorecase
 set smartcase
 
 " ====================================================
+"   Buffers
+" ====================================================
+
+function! KillEmAll()
+    execute 'silent! bufdo bdelete'
+    echohl String
+    echo 'All buffers cleared. Go forth and make great things!'
+endfunction
+nnoremap <leader>cla :call KillEmAll()<cr>
+nnoremap <leader>clw :only<cr>
+
+" Invoke CtrlP in find buffer or find MRU file mode
+nnoremap <leader>y :CtrlPBuffer<cr>
+
+" Buffers (runs the delete buffer command on all open buffers)
+nnoremap <leader>yd :bufdo bd<cr>
+
+" Buffers list
+nnoremap <leader>yt :ls<cr>
+
+" ====================================================
+"   Diff
+" ====================================================
+
+" Maps to toggle vimdiff on and off to compare buffers
+nmap <leader>dt :diffthis<cr>
+nmap <leader>do :diffoff<cr>
+
+" Maps for working with diffs
+nnoremap <leader>dp :diffput<cr>
+nnoremap <leader>dg :diffget<cr>
+nnoremap <leader>du :diffupdate<cr>
+
+" ====================================================
 "   Emmet
 " ====================================================
 
@@ -324,17 +358,6 @@ nnoremap <leader>q :q<cr>
 
 " Replace current search with...
 nnoremap <leader>rs :%s//
-
-" == Y == "
-
-" Invoke CtrlP in find buffer or find MRU file mode
-nnoremap <leader>y :CtrlPBuffer<cr>
-
-" Buffers (runs the delete buffer command on all open buffers)
-nnoremap <leader>yd :bufdo bd<cr>
-
-" Buffers list
-nnoremap <leader>yt :ls<cr>
 
 " == Z == "
 
