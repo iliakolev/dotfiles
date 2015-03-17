@@ -346,8 +346,8 @@ map <leader>n :call RenameFile()<cr>
 " Duplicate current line, paste after
 nnoremap <leader>p Yp
 
-" Nice paste
-nnoremap <leader>P :set paste<cr>o<esc>"*]p :set nopaste<cr>
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
 
 " == Q == "
 
