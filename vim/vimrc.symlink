@@ -145,7 +145,7 @@ set smartcase
 "   Emmet
 " ====================================================
 
-let g:user_emmet_expandabbr_key = '<tab>'
+let g:user_emmet_leader_key=','
 
 " ====================================================
 "   Lightline
