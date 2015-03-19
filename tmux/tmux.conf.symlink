@@ -14,7 +14,7 @@ set -g terminal-overrides "xterm:colors=256"
 
 set-window-option -g utf8 on
 
-# Remove delay when pressing esc in vim
+# Remove delay when pressing esc in Vim
 set -sg escape-time 0
 
 # Tells Tmux up front what shell to expect
@@ -42,7 +42,7 @@ bind J resize-pane -D 5
 bind K resize-pane -U 5
 bind L resize-pane -R 5
 
-# Smart pane switching with awareness of vim splits
+# Smart pane switching with awareness of Vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-h) || tmux select-pane -L"
 bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-j) || tmux select-pane -D"
 bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
