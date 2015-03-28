@@ -71,6 +71,9 @@ Plugin 'scrooloose/syntastic'
 " The ultimate snippet solution
 Plugin 'SirVer/ultisnips'
 
+" A code-completion engine for Vim
+Plugin 'Valloric/YouCompleteMe'
+
 " Universal comment plugin
 Plugin 'vim-scripts/tComment'
 
