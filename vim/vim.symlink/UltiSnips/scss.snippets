@@ -1,16 +1,55 @@
-snippet co "Comment Block" b
-// *************************************
+snippet coi "Comment introduction" b
+// =============================================================================
 //
-//   #${1:TITLE}
+// Name:          ${1:Name}
 //
-// *************************************
+// Description:   ${2:Description}
+//
+// Block:         \`${3:block}\`
+//
+// Element:       \`$3__${4:element}\`
+//
+// Modifiers:     \`$3--${5:alpha}\`
+//                \`$3--${6:beta}\`
+//                \`$3--${7:gamma}\`
+//
+// Markup:
+//
+// <div class="$3  $3--$5">
+//     <div class="$3__$4"></div>
+// </div>
+//
+// =============================================================================
 
 $0
 endsnippet
 
-snippet cos "Comment Block Sub-section" b
-//   #${1:SUB-TITLE}
-// *************************************
+snippet cob "Comment block [B]EM" b
+// =============================================================================
+// Block: \`${1:block}\`
+// =============================================================================
+
+$0
+endsnippet
+
+snippet coe "Comment element B[E]M" b
+// Element: \`${1:block__element}\`
+// =============================================================================
+
+$0
+endsnippet
+
+snippet com "Comment modifier BE[M]" b
+// Modifier: \`${1:block--mofifier}\`
+// =============================================================================
+
+$0
+endsnippet
+
+
+snippet cog "Comment general" b
+// ${1:General comment}
+// =============================================================================
 
 $0
 endsnippet
