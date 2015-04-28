@@ -1,0 +1,68 @@
+" ====================================================
+"   Bundles
+" ====================================================
+
+" Automatic installation vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/bundle')
+
+" Solarized
+Plug 'altercation/vim-colors-solarized'
+
+" Shows a git diff in the 'gutter'
+Plug 'airblade/vim-gitgutter'
+
+" Seamless navigation between tmux panes and vim splits
+Plug 'christoomey/vim-tmux-navigator'
+
+" True Sublime Text style multiple selections for Vim
+Plug 'terryma/vim-multiple-cursors'
+
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+
+" Pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+
+" Helpers for UNIX
+Plug 'tpope/vim-eunuch'
+
+" Vim runtime files for Haml, Sass, and SCSS
+Plug 'tpope/vim-haml'
+
+" Vim Markdown runtime files
+Plug 'tpope/vim-markdown'
+
+" Expanding abbreviations
+Plug 'mattn/emmet-vim'
+
+" Quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+
+" A light and configurable statusline
+Plug 'itchyny/lightline.vim'
+
+" Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plug 'ctrlpvim/ctrlp.vim'
+
+" HTML5 omnicomplete and syntax
+Plug 'othree/html5.vim'
+
+" Syntax checking
+Plug 'scrooloose/syntastic'
+
+" The ultimate snippet solution
+Plug 'SirVer/ultisnips'
+
+" A code-completion engine for Vim
+" Plug 'Valloric/YouCompleteMe'
+
+" Universal comment plugin
+Plug 'vim-scripts/tComment'
+
+call plug#end()
