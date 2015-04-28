@@ -59,6 +59,9 @@ Plug 'scrooloose/syntastic'
 " The ultimate snippet solution
 Plug 'SirVer/ultisnips'
 
+" Alignment plugin
+Plug 'junegunn/vim-easy-align'
+
 " Universal comment plugin
 Plug 'vim-scripts/tComment'
 
