@@ -59,9 +59,6 @@ Plug 'scrooloose/syntastic'
 " The ultimate snippet solution
 Plug 'SirVer/ultisnips'
 
-" A code-completion engine for Vim
-" Plug 'Valloric/YouCompleteMe'
-
 " Universal comment plugin
 Plug 'vim-scripts/tComment'
 
