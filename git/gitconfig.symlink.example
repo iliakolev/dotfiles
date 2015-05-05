@@ -36,6 +36,9 @@
 [commit]
     template = ~/.gitmessage
 
+[fetch]
+    prune = true
+
 [merge]
     ff = only
 
