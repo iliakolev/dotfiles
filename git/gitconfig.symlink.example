@@ -39,6 +39,9 @@
 [fetch]
     prune = true
 
+[rebase]
+    autosquash = true
+
 [merge]
     ff = only
 
