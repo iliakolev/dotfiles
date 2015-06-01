@@ -3,8 +3,10 @@
 " ====================================================
 
 " Line numbers are good
-set number
-set numberwidth=5
+set relativenumber
+if v:version > 703
+  set number " hybrid relative and absolute for current line
+endif
 
 " Allow backspace in Insert mode
 set backspace=indent,eol,start
