@@ -210,6 +210,9 @@ set wildmenu
 set wildmode=list:longest,full
 set wildignore+=*.pyc
 
+" Easy re-sourcing of vimrc
+map <leader>sop :source %<cr>
+
 " Make Y yank to end of line (like D, or C)
 nmap Y y$
 
