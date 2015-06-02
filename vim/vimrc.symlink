@@ -199,12 +199,16 @@ let g:lightline = {
     \ 'colorscheme': 'solarized_dark',
    \ }
 
-" ====================================================
-"   Speedups
-" ====================================================
+" Speedup configurations
+" "------------------------
 
 " Quick toggle between two files
 nnoremap <leader><leader> <C-^>
+
+" Setup nice command tab completion
+set wildmenu
+set wildmode=list:longest,full
+set wildignore+=*.pyc
 
 " Make Y yank to end of line (like D, or C)
 nmap Y y$
