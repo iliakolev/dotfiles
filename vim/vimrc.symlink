@@ -139,15 +139,17 @@ set ruler
 set textwidth=80
 set colorcolumn=+1
 
-" ====================================================
-"   Search
-" ====================================================
+" Search configurations
+"------------------------
 
-set cursorline
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
+" Searching stuff
+set hlsearch                    " hilight searches, map below to clear
+nohlsearch                      " kill highliting on vimrc reload
+set incsearch                   " do incremental searching
+set ignorecase                  " Case insensitive...
+set smartcase                   " ...except if you use UCase
+nmap <F4> :silent noh<CR>
+nnoremap <LEADER>rh :silent noh<CR>
 
 " ====================================================
 "   Buffers
@@ -330,11 +332,6 @@ set splitright
 " Jump to beginning and end of brace-surrounded blocks
 noremap [[ [{
 noremap ]] ]}
-
-" == L == "
-"
-" Clear the search buffer when hitting return
-nnoremap <silent> <leader>l :nohlsearch<cr>
 
 " == N == "
 "
