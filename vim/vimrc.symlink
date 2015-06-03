@@ -2,6 +2,9 @@
 "   General Configuration
 " ====================================================
 
+" Want to set this before any others
+let mapleader = "\<Space>"
+
 " Line numbers are good
 set relativenumber
 if v:version > 703
@@ -49,9 +52,6 @@ set ttimeoutlen=1
 
 " Remove dotted line on split windows
 set fillchars+=vert:\
-
-" Change leader key
-let mapleader = ','
 
 " Toggle spell check with <F5>
 map <F5> :setlocal spell! spelllang=en_us<cr>
