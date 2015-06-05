@@ -151,10 +151,8 @@ set smartcase                   " ...except if you use UCase
 nmap <F4> :silent noh<CR>
 nnoremap <LEADER>rh :silent noh<CR>
 
-" ====================================================
-"   Buffers
-" ====================================================
-
+" Buffer configurations
+"------------------------
 function! KillEmAll()
     execute 'silent! bufdo bdelete'
     echohl String
@@ -163,14 +161,15 @@ endfunction
 nnoremap <leader>cla :call KillEmAll()<cr>
 nnoremap <leader>clw :only<cr>
 
-" Invoke CtrlP in find buffer or find MRU file mode
-nnoremap <leader>y :CtrlPBuffer<cr>
+function! MkdirForCurrentFile()
+  let path = substitute(expand('%:h'), getcwd(), '', '')
+  echo path
+  silent !mkdir -p %:h
+  redraw!
+  echohl String | echo 'Created directory structure: "'. path . '"' | echohl None
+endfunction
 
-" Buffers (runs the delete buffer command on all open buffers)
-nnoremap <leader>yd :bufdo bd<cr>
-
-" Buffers list
-nnoremap <leader>yt :ls<cr>
+nnoremap <leader>mkd :call MkdirForCurrentFile()<cr>
 
 " ====================================================
 "   Diff
