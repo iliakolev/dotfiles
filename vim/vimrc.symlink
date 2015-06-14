@@ -323,10 +323,6 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" Save file
-noremap <C-s> <esc>:w<cr>
-inoremap <C-s> <esc>:w<cr>
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
