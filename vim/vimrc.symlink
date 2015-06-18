@@ -367,6 +367,11 @@ nnoremap <leader>q :q<cr>
 " Replace current search with...
 nnoremap <leader>rs :%s//
 
+" == W == "
+
+" Save file
+noremap <leader>w <esc>:w<cr>
+
 " == Z == "
 
 " Quicker action to suspend Vim ('fg' to return)
