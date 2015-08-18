@@ -63,15 +63,3 @@ alias rm='rm -i'
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
-
-# ----------------------------------------------------
-#   Vim
-# ----------------------------------------------------
-
-alias v='vim'
-
-# vimrc editing
-alias ve='vim ~/.vimrc'
-
-# mimic vim functions
-alias :q='exit'
