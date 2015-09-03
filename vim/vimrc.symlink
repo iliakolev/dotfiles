@@ -366,3 +366,8 @@ noremap <leader>w <esc>:w<cr>
 
 " Quicker action to suspend Vim ('fg' to return)
 nnoremap <leader>z <C-z>
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+    source ~/.vimrc.local
+endif
