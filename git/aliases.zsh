@@ -10,13 +10,14 @@ fi
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
+alias gbm='git branch -m'
 alias gc='git commit -v'
 alias gca='git commit -a'
+alias gco='git checkout'
 alias gd='git diff'
 alias gfb='git checkout -b'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gl='git pull --prune'
-alias gco='git checkout'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gm='git merge'
 alias gmff='git merge --no-ff'
 alias gp='git push origin HEAD'
