@@ -1,0 +1,12 @@
+" ====================================================
+"   Spell check configurations
+" ====================================================
+
+" Toggle spell check with <F5>
+map <F5> :setlocal spell! spelllang=en_us<cr>
+imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
+
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
+
+" vim:ft=vim
