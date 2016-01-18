@@ -1,0 +1,9 @@
+" ====================================================
+"   Trailing Whitespace - Whitespace helper
+" ====================================================
+
+Plug 'bronson/vim-trailing-whitespace'
+
+nmap <leader>wht :FixWhitespace<cr>
+
+" vim:ft=vim

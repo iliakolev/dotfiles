@@ -1,0 +1,7 @@
+" ====================================================
+"   Easy align - Align by motion for tables ...
+" ====================================================
+
+Plug 'junegunn/vim-easy-align'
+
+" vim:ft=vim
