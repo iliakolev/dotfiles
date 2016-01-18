@@ -1,0 +1,19 @@
+" ====================================================
+"   Fugitive - Interact with git via Vim
+" ====================================================
+
+Plug 'tpope/vim-fugitive'
+
+nmap <leader>st :only<cr>:Gstatus<cr>
+nmap <leader>gd :GitDiff<cr>
+nmap <leader>gb :Gblame<cr>
+
+set diffopt+=vertical
+
+command! GitDiff call s:GitDiff()
+
+autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit setlocal textwidth=72
+autocmd FileType gitcommit setl diffopt+=vertical
+
+" vim:ft=vim

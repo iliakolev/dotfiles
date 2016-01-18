@@ -1,0 +1,8 @@
+" ====================================================
+"   CSS configurations
+" ====================================================
+
+" Allow stylesheets to autocomplete hyphenated words
+au FileType css,scss,sass setlocal iskeyword+=-
+
+" vim:ft=vim

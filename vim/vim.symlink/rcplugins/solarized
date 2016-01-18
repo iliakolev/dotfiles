@@ -1,0 +1,11 @@
+" ====================================================
+"   Solarized - Colorscheme definition. Dark & light.
+" ====================================================
+
+Plug 'altercation/vim-colors-solarized'
+
+hi! LineNR guibg=NONE ctermbg=NONE
+hi FoldColumn ctermbg=NONE
+hi SignColumn ctermbg=NONE
+
+" vim:ft=vim

@@ -1,0 +1,12 @@
+" ====================================================
+"   Lightline - A light and configurable statusline
+" ====================================================
+
+Plug 'itchyny/lightline.vim'
+
+
+let g:lightline = {
+    \ 'colorscheme': 'solarized_dark',
+   \ }
+
+" vim:ft=vim

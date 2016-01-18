@@ -1,0 +1,13 @@
+" ====================================================
+"   Ruby configurations
+" ====================================================
+
+" Set syntax highlighting
+au BufRead,BufNewFile Appraisals set filetype=ruby
+
+au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
+
+" Set .erb html files
+au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
+
+" vim:ft=vim

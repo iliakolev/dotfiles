@@ -1,294 +1,40 @@
 " ====================================================
-"   General Configuration
+"
+"   My vimrc
+"
 " ====================================================
 
 " Want to set this before any others
 let mapleader = "\<Space>"
 
-" Line numbers are good
-set relativenumber
-if v:version > 703
-  set number " hybrid relative and absolute for current line
-endif
-
-" Allow backspace in Insert mode
-set backspace=indent,eol,start
-
-" Store :cmdline history
-set history=1000
-
-" Show incomplete commands
-set showcmd
-
-" Don't show intro
-set shortmess+=I
-
-" No sounds
-set visualbell
-
-" Reload files changed outside of Vim
-set autoread
-
-" Controls how Vim flashes the screen. If empty, Vim does not flash the screen.
-set t_vb=
-
-set noshowmode
-set cursorline
-set mousehide
-set ttyfast
-set laststatus=2
-
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-" Make vim clipboard available
-set clipboard=unnamed
-
-" (Hopefully) removes the delay when hitting esc in insert mode
-set ttimeout
-set ttimeoutlen=1
-
-" Remove dotted line on split windows
-set fillchars+=vert:\
-
-" Toggle spell check with <F5>
-map <F5> :setlocal spell! spelllang=en_us<cr>
-imap <F5> <ESC>:setlocal spell! spelllang=en_us<cr>
-
-" Use one space, not two, after punctuation
-set nojoinspaces
-
-" Autocomplete with dictionary words when spell check is on
-set complete+=kspell
-
-" ====================================================
-"   Bundles
-" ====================================================
-
-if filereadable(expand("~/.vimrc.bundles"))
-    source ~/.vimrc.bundles
-endif
-
-" ====================================================
-"   Colors
-" ====================================================
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-    syntax on
-endif
-
-set t_Co=256
-let g:solarized_termtrans = 1
-
-set background=dark
-if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-    colorscheme solarized
-endif
-
-" ====================================================
-"   Solarized
-" ====================================================
-
-hi! LineNR guibg=NONE ctermbg=NONE
-hi FoldColumn ctermbg=NONE
-hi SignColumn ctermbg=NONE
-
-" ====================================================
-"   Turn off Swap Files
-" ====================================================
-
-set noswapfile
-set nobackup
-set nowb
-
-" ====================================================
-"   Indentation
-" ====================================================
-
-set autoindent
-set smartindent
-set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
-
-set list listchars=tab:»·,trail:· "Display extra whitespace
-
-set nowrap    "Don't wrap lines
-set linebreak "Wrap at convenient points
-
-" ====================================================
-"   Scrolling
-" ====================================================
-
-set scrolloff=4
-
-" ====================================================
-"   Folds
-" ====================================================
-
-set foldcolumn=1
-
-" ====================================================
-"   Rulers
-" ====================================================
-
-set ruler
-set textwidth=80
-set colorcolumn=+1
-
-" Search configurations
-"------------------------
-
-" Searching stuff
-set hlsearch                    " hilight searches, map below to clear
-nohlsearch                      " kill highliting on vimrc reload
-set incsearch                   " do incremental searching
-set ignorecase                  " Case insensitive...
-set smartcase                   " ...except if you use UCase
-nmap <F4> :silent noh<CR>
-nnoremap <LEADER>rh :silent noh<CR>
-
-" Buffer configurations
-"------------------------
-function! KillEmAll()
-    execute 'silent! bufdo bdelete'
-    echohl String
-    echo 'All buffers cleared. Go forth and make great things!'
-endfunction
-nnoremap <leader>cla :call KillEmAll()<cr>
-nnoremap <leader>clw :only<cr>
-
-function! MkdirForCurrentFile()
-  let path = substitute(expand('%:h'), getcwd(), '', '')
-  echo path
-  silent !mkdir -p %:h
-  redraw!
-  echohl String | echo 'Created directory structure: "'. path . '"' | echohl None
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.vim/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+        execute 'source' config_file
+    endif
+  endfor
 endfunction
 
-nnoremap <leader>mkd :call MkdirForCurrentFile()<cr>
-
 " ====================================================
-"   Emmet
+"   Setup vim-plug to manage my plugins
 " ====================================================
 
-let g:user_emmet_leader_key=','
-
-" ====================================================
-"   Lightline
-" ====================================================
-
-let g:lightline = {
-    \ 'colorscheme': 'solarized_dark',
-   \ }
-
-" Speedup configurations
-" "------------------------
-
-" Quick toggle between two files
-nnoremap <leader><leader> <C-^>
-
-" Setup nice command tab completion
-set wildmenu
-set wildmode=list:longest,full
-set wildignore+=*.pyc
-
-" Easy re-sourcing of vimrc
-map <leader>sop :source %<cr>
-
-" Make Y yank to end of line (like D, or C)
-nmap Y y$
-
-" Open .vimrc
-nnoremap <leader>rc :e ~/.dotfiles/vim/vimrc.symlink<cr>
-
-" Easy access to the start of the line
-nnoremap 0 ^
-
-" Quickly open a second window to view files side by side
-nmap <LEADER>vn :vnew<CR>
-nmap <LEADER>vs :vsplit<CR>
-
-" Move one line at a time, aka 'fine ajdustment'
-nnoremap j gj
-nnoremap k gk
-
-" Reselect pasted text. Mnem: 'Get pasted'
-nnoremap gp `[v`]
-
-" Go to position of last edit. Mnem: 'Go to Edit'
-nnoremap ge `.
-
-" ====================================================
-"   Syntastic
-" ====================================================
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_html_checkers = ['w3']
-let g:syntastic_scss_checkers = ['scss_lint']
-
-" ====================================================
-"   UtilSnips
-" ====================================================
-
-let g:UltiSnipsExpandTrigger       = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
-let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
-
-filetype plugin indent on
-
-augroup vimrcEx
-    autocmd!
-
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it for commit messages, when the position is invalid, or when
-    " inside an event handler (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
-
-    " Set syntax highlighting for specific file types
-    autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-    autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-    " Enable spell checking for Markdown
-    autocmd FileType markdown setlocal spell
-
-    " Automatically wrap at 80 characters for Markdown
-    autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-    " Automatically wrap at 72 characters and spell check for git commit messages
-    autocmd FileType gitcommit setlocal textwidth=72
-    autocmd FileType gitcommit setlocal spell
-
-    " Allow stylesheets to autocomplete hyphenated words
-    autocmd FileType css,scss,sass setlocal iskeyword+=-
-augroup END
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-    " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
-" Fix some problems with gitgutter and other plugins (originally jedi-vim, but
-" left just in case, and it's faster)
-let g:gitgutter_eager = 0
-let g:gitgutter_realtime = 0
+" ========== Plugins are each listed in their own file. Loop  ========== "
+
+call plug#begin('~/.vim/bundle')
+call s:SourceConfigFilesIn('rcplugins')
+call plug#end()
+
+" ========== Vimrc is split accross multiple files, Loop  ========== "
+
+call s:SourceConfigFilesIn('rcfiles')
 
 " ====================================================
 "   Mappings
@@ -297,7 +43,6 @@ let g:gitgutter_realtime = 0
 " ========== General ========== "
 
 " Better defaults
-nnoremap ; :
 inoremap jk <esc>
 
 " Quicker window movement
@@ -343,9 +88,6 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " == P == "
-
-" Duplicate current line, paste after
-nnoremap <leader>p Yp
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>

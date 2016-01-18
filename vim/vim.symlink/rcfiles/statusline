@@ -1,0 +1,7 @@
+" ====================================================
+"   Statusline configurations
+" ====================================================
+
+set laststatus=2 " Always show the statusline
+
+" vim:ft=vim

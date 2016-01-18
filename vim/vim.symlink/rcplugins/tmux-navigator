@@ -1,0 +1,7 @@
+" ====================================================
+"   tmux-navigator - Navigation between tmux panes
+" ====================================================
+
+Plug 'christoomey/vim-tmux-navigator'
+
+" vim:ft=vim
