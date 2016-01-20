@@ -3,6 +3,7 @@
 " ====================================================
 
 set nocompatible                  " Don't maintain compat with Vi
+set term=ansi                     " Name of the terminal
 set noshowmode                    " Hide the mode on last line
 set hidden                        " Allow buffer change w/o saving
 set autoread                      " Reload files changed outside of Vim
