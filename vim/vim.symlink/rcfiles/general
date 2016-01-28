@@ -3,7 +3,6 @@
 " ====================================================
 
 set nocompatible                  " Don't maintain compat with Vi
-set term=ansi                     " Name of the terminal
 set noshowmode                    " Hide the mode on last line
 set hidden                        " Allow buffer change w/o saving
 set autoread                      " Reload files changed outside of Vim
@@ -34,7 +33,6 @@ set modeline        " Enable modeline. Disabled by default for security reasons
 set modelines=1     " Set to 1 to allow rcfiles to be recognized as vim files
 
 " Get rid of the delay when hitting esc!
-set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
