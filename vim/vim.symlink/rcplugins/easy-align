@@ -1,6 +1,9 @@
-" ====================================================
-"   Easy align - Align by motion for tables ...
-" ====================================================
+" *************************************
+"
+"   Easy Align
+"   -> Align by motion for tables and other structured content
+"
+" *************************************
 
 Plug 'junegunn/vim-easy-align'
 

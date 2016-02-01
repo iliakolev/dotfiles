@@ -1,6 +1,9 @@
-" ====================================================
-"   Trailing Whitespace - Whitespace helper
-" ====================================================
+" *************************************
+"
+"   Trailing Whitespace
+"   -> Highlights trailing whitespace in red; provides:FixWhitespace to fix it.
+"
+" *************************************
 
 Plug 'bronson/vim-trailing-whitespace'
 

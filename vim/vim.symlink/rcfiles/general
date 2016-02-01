@@ -1,6 +1,8 @@
-" ====================================================
-"   General configurations
-" ====================================================
+" *************************************
+"
+"   General
+"
+" *************************************
 
 set nocompatible                  " Don't maintain compat with Vi
 set noshowmode                    " Hide the mode on last line
@@ -9,16 +11,7 @@ set autoread                      " Reload files changed outside of Vim
 set lazyredraw                    " Don't update while executing macros
 set backspace=indent,eol,start    " Sane backspace behavior
 set history=1000                  " Remember last 1000 commands
-set scrolloff=4                   " Keep at least 4 lines below cursor
-set expandtab                     " Convert <tab> to spaces (2 or 4)
-set tabstop=4                     " Four spaces per tab
-set shiftwidth=4                  " Then override with per filteype
-set softtabstop=4                 " Specific settings via autocmd
 set secure                        " Limit what modelines and autocmds can do
-set list listchars=tab:»·,trail:· " Display extra whitespace
-set nowrap                        " Don't wrap lines
-set linebreak                     " Wrap at convenient points
-set nojoinspaces                  " Use one space, not two, after punctuation
 
 set relativenumber
 if v:version > 703
@@ -36,12 +29,41 @@ set modelines=1     " Set to 1 to allow rcfiles to be recognized as vim files
 set ttimeout
 set ttimeoutlen=1
 
-" Turn off swap files
+" -------------------------------------
+"   Swap Files
+" -------------------------------------
+
 set nobackup
 set nowritebackup
 set noswapfile
 
-" Persistent undo
+" -------------------------------------
+"   Indentation
+" -------------------------------------
+
+set autoindent                    " Indent at the same level of the previous line
+set expandtab                     " Convert <tab> to spaces (2 or 4)
+set tabstop=4                     " Four spaces per tab
+set shiftwidth=4                  " Then override with per filteype
+set softtabstop=4                 " Specific settings via autocmd
+
+set list listchars=tab:»·,trail:· " Display extra whitespace
+
+set nowrap                        " Don't wrap lines
+set linebreak                     " Wrap at convenient points
+
+set nojoinspaces                  " Use one space, not two, after punctuation
+
+" -------------------------------------
+"   Scrolling
+" -------------------------------------
+
+set scrolloff=4                   " Keep at least 4 lines below cursor
+
+" -------------------------------------
+"   Undo
+" -------------------------------------
+
 let undodir = expand('~/.undo-vim')
 if !isdirectory(undodir)
     call mkdir(undodir)

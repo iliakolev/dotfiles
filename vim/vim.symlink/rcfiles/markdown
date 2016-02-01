@@ -1,6 +1,8 @@
-" ====================================================
-"   Markdown configurations
-" ====================================================
+" *************************************
+"
+"   Markdown
+"
+" *************************************
 
 " Set syntax highlighting
 au BufRead,BufNewFile *.md set filetype=markdown

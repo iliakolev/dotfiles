@@ -1,6 +1,8 @@
-" ====================================================
-"   CSS configurations
-" ====================================================
+" *************************************
+"
+"   CSS
+"
+" *************************************
 
 " Allow stylesheets to autocomplete hyphenated words
 au FileType css,scss,sass setlocal iskeyword+=-

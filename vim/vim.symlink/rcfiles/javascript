@@ -1,6 +1,8 @@
-" ====================================================
-"   JavaScript configurations
-" ====================================================
+" *************************************
+"
+"   JavaScript
+"
+" *************************************
 
 " Set syntax highlighting
 au BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json

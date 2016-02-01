@@ -1,6 +1,9 @@
-" ====================================================
-"   Unimpaired - Pairs of mappings thanks to tpope
-" ====================================================
+" *************************************
+"
+"   Unimpaired
+"   -> pairs of handy bracket mappings
+"
+" *************************************
 
 Plug 'tpope/vim-unimpaired'
 

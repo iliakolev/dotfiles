@@ -1,6 +1,9 @@
-" ====================================================
-"   tmux-navigator - Navigation between tmux panes
-" ====================================================
+" *************************************
+"
+"   tmux navigator
+"   -> Seamless navigation between tmux panes and vim splits
+"
+" *************************************
 
 Plug 'christoomey/vim-tmux-navigator'
 

@@ -1,12 +1,10 @@
-" ====================================================
-"   Gitgutter - Shows a git diff in the gutter
-" ====================================================
+" *************************************
+"
+"   GitGitter
+"   -> Shows a git diff in the gutter
+"
+" *************************************
 
 Plug 'airblade/vim-gitgutter'
-
-" Fix some problems with gitgutter and other plugins (originally jedi-vim, but
-" left just in case, and it's faster)
-let g:gitgutter_eager = 0
-let g:gitgutter_realtime = 0
 
 " vim:ft=vim

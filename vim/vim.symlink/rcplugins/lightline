@@ -1,9 +1,11 @@
-" ====================================================
-"   Lightline - A light and configurable statusline
-" ====================================================
+" *************************************
+"
+"   Lightline
+"   -> A light and configurable statusline/tabline for Vim
+"
+" *************************************
 
 Plug 'itchyny/lightline.vim'
-
 
 let g:lightline = {
     \ 'colorscheme': 'solarized_dark',

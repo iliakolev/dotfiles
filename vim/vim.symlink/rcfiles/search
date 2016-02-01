@@ -1,6 +1,8 @@
-" ====================================================
-"   Search configurations
-" ====================================================
+" *************************************
+"
+"   Search
+"
+" *************************************
 
 set hlsearch                    " Highlight searches, map below to clear
 nohlsearch                      " Kill highlighting on vimrc reload
