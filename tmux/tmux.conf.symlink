@@ -1,47 +1,25 @@
-set -g prefix2 C-s
+# ****************************************************
+#
+#   tmux
+#
+# ****************************************************
 
-# Vi is good
-setw -g mode-keys vi
+# ----------------------------------------------------
+#   Colors
+# ----------------------------------------------------
 
-# Renumber windows sequentially after closing any of them
-set -g renumber-windows on
-
-# Set the term environment variable when using tmux
 set -g default-terminal "screen-256color"
 set -g terminal-overrides "xterm:colors=256"
 
-set-window-option -g utf8 on
+# ----------------------------------------------------
+#   Bindings
+# ----------------------------------------------------
 
-# Remove delay when pressing esc in Vim
-set -sg escape-time 0
-
-# Tells Tmux up front what shell to expect
-set-option -g default-shell /bin/zsh
-
-# Increase scrollback lines
-set -g history-limit 10000
-
-# prefix -> back-one-character
-bind-key C-b send-prefix
-
-# prefix-2 -> forward-incremental-history-search
-bind-key C-s send-prefix -2
-
-# Easy rotating of panes
-bind C-k swap-pane -U
-
-# Reload Tmux config
-bind r source-file ~/.tmux.conf \; display "Tmux Reloaded!"
-
-# Make splitting windows easier
-bind v split-window -h
-bind s split-window -v
-
-# Resizing panes
-bind H resize-pane -L 5
-bind J resize-pane -D 5
-bind K resize-pane -U 5
-bind L resize-pane -R 5
+# Better bindings for resizing panes
+bind-key -n C-Up resize-pane -U 4
+bind-key -n C-Down resize-pane -D 4
+bind-key -n C-Left resize-pane -L 4
+bind-key -n C-Right resize-pane -R 4
 
 # Smart pane switching with awareness of Vim splits
 # See this blog post for additional detail:
@@ -53,36 +31,39 @@ bind -n C-k if-shell "$is_vim" "send-keys C-k" "select-pane -U"
 bind -n C-l if-shell "$is_vim" "send-keys C-l" "select-pane -R"
 bind -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 
-# Mouse
-setw -g mode-mouse off
+# more intuitive keybindings for splitting
+bind \ split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 
-# The base index for windows and panes to 1 instead of the default 0.
-# Now prefix 1 is the first window instead of a prefix 0 being the first.
-set -g base-index 1
-set-window-option -g pane-base-index 1
+bind c new-window -c "#{pane_current_path}"
 
 # Command line
 bind-key : command-prompt
 bind , command-prompt "rename-window '%%'"
 
+# Quick session switching back and forth. I never use the built in layouts
+# # (default mapping for Space), so I reclaimed the key for this
+bind-key Space switch-client -l
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf \; display "Tmux Reloaded!"
+
+set -g prefix2 C-s
+
+# ----------------------------------------------------
+#   Windows
+# ----------------------------------------------------
+
+# Start window numbers at 1 to match keyboard order with tmux window order
+set -g base-index 1
+set-window-option -g pane-base-index 1
+
+# Renumber windows sequentially after closing any of them
+set -g renumber-windows on
+
 # Remove administrative debris (session name, hostanme, time) in status bar
 set -g status-left ''
 set -g status-right ''
-
-# Activity
-setw -g monitor-activity on
-set -g visual-activity on
-
-bind-key [ copy-mode
-bind-key ] paste-buffer
-
-# Keep window names as I set them
-setw -g automatic-rename off
-
-# Status bar colors
-set -g status-bg black
-set -g status-fg yellow
-set -g status-attr default
 
 # Default window title colors
 setw -g window-status-fg brightblue
@@ -92,3 +73,70 @@ setw -g window-status-bg default
 setw -g window-status-current-fg yellow
 setw -g window-status-current-bg default
 setw -g window-status-current-attr dim
+
+# Keep window names as I set them
+setw -g automatic-rename off
+
+# ----------------------------------------------------
+#   Panes
+# ----------------------------------------------------
+
+# Easy rotating of panes
+bind C-k swap-pane -U
+
+# Dismiss current pane to background window
+bind b break-pane -d
+bind-key ! run-shell '(tmux switch-client -l || tmux switch-client -n) && tmux kill-session -t "#S" || tmux kill-session'
+
+# Binding to toggle synchronize panes
+is_synched='[[ $(tmux show-window-options -v synchronize-panes) == "on" ]]'
+bind-key S if-shell "$is_synched" "set-window-option synchronize-panes off" "set-window-option synchronize-panes on"
+
+# ----------------------------------------------------
+#   Status Bar
+# ----------------------------------------------------
+
+# Status bar colors
+set -g status-bg black
+set -g status-fg yellow
+set -g status-attr default
+
+# Simplify status bar display.
+set -g status-left '[#S]'
+set -g status-right "#{?pane_synchronized,--SYNCED--,} #(battery -t -g black)  #(date '+%a, %b %d - %I:%M') "
+
+# ----------------------------------------------------
+#   Copy & Paste
+# ----------------------------------------------------
+
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+bind-key [ copy-mode
+bind-key ] paste-buffer
+
+# ----------------------------------------------------
+#   Settings
+# ----------------------------------------------------
+
+# Increase scrollback lines
+set -g history-limit 10000
+
+# Disabled mouse
+setw -g mode-mouse off
+
+# prefix -> back-one-character
+bind-key C-b send-prefix
+
+# prefix-2 -> forward-incremental-history-search
+bind-key C-s send-prefix -2
+
+# Make Vim responsive to esc
+set -s escape-time 0
+
+# Set default shell
+set-option -g default-shell /usr/bin/zsh
+
+# Activity
+setw -g monitor-activity on
+set -g visual-activity on
