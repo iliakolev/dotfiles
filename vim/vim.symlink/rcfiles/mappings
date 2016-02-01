@@ -1,0 +1,75 @@
+" ************************************
+"
+"   Mappings
+"
+" *************************************
+
+" -------------------------------------
+"   General
+" -------------------------------------
+
+" ----- Better defaults ----- "
+
+inoremap jk <esc>
+
+" ----- Arrow Keys for Window Sizing ----- "
+
+noremap <up>    <c-w>+
+noremap <down>  <c-w>-
+noremap <left>  1<c-w>>
+noremap <right> 1<c-w><
+
+" ----- Window Navigation ----- "
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" ----- Get off my lawn ----- "
+
+inoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+
+" -------------------------------------
+"   Leader
+" -------------------------------------
+
+" ----- N ----- "
+
+" Rename current file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
+" ----- O ----- "
+
+" Open current file in Sublime Text
+nnoremap <leader>os :! subl '%:p'<cr>
+
+" ----- P ----- "
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
+" ----- Q ----- "
+
+" Quit
+nnoremap <leader>q :q<cr>
+
+" ----- W ----- "
+
+" Save file
+noremap <leader>w <esc>:w<cr>
+
+" vi:ft=vim

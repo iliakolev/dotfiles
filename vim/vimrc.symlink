@@ -1,24 +1,24 @@
-" ====================================================
+" *************************************
 "
-"   My vimrc
+"   .vimrc
 "
-" ====================================================
+" *************************************
 
 " Want to set this before any others
 let mapleader = "\<Space>"
 
 function! s:SourceConfigFilesIn(directory)
-  let directory_splat = '~/.vim/' . a:directory . '/*'
-  for config_file in split(glob(directory_splat), '\n')
-    if filereadable(config_file)
-        execute 'source' config_file
-    endif
-  endfor
+    let directory_splat = '~/.vim/' . a:directory . '/*'
+    for config_file in split(glob(directory_splat), '\n')
+        if filereadable(config_file)
+            execute 'source' config_file
+        endif
+    endfor
 endfunction
 
-" ====================================================
+" -------------------------------------
 "   Setup vim-plug to manage my plugins
-" ====================================================
+" -------------------------------------
 
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -26,93 +26,32 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall
 endif
 
-" ========== Plugins are each listed in their own file. Loop  ========== "
+" -------------------------------------
+"   Plugins are each listed in their own file. Loop and source ftw
+" -------------------------------------
 
 call plug#begin('~/.vim/bundle')
 call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
 
-" ========== Vimrc is split accross multiple files, Loop  ========== "
+" -------------------------------------
+"   Vimrc is split accross multiple files, so loop over and source each
+" -------------------------------------
 
 call s:SourceConfigFilesIn('rcfiles')
 
-" ====================================================
-"   Mappings
-" ====================================================
+" -------------------------------------
+"   Local
+" -------------------------------------
 
-" ========== General ========== "
+" ----- Everything ----- "
 
-" Better defaults
-inoremap jk <esc>
+if filereadable( expand('~/.vimrc.local') )
+  source ~/.vimrc.local
+endif
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" ----- Per Project ----- "
 
-" Window sizing
-nnoremap + <C-w>>
-nnoremap _ <C-w><
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" ========== Leader ========== "
-
-" == Non-Alphanumeric == "
-
-" Jump to beginning and end of brace-surrounded blocks
-noremap [[ [{
-noremap ]] ]}
-
-" == N == "
-"
-" Rename current file
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-map <leader>n :call RenameFile()<cr>
-
-" == P == "
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-" == Q == "
-
-" Quit
-nnoremap <leader>q :q<cr>
-
-" == R == "
-
-" Replace current search with...
-nnoremap <leader>rs :%s//
-
-" == W == "
-
-" Save file
-noremap <leader>w <esc>:w<cr>
-
-" == Z == "
-
-" Quicker action to suspend Vim ('fg' to return)
-nnoremap <leader>z <C-z>
-
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-    source ~/.vimrc.local
+if filereadable( glob('.vimrc.local') )
+  source .vimrc.local
 endif
