@@ -1,14 +1,15 @@
-# ****************************************************
+# *************************************
 #
 #   Aliases
 #
-# ****************************************************
+# *************************************
 
-# ----------------------------------------------------
+
+# -------------------------------------
 #   Linux
-# ----------------------------------------------------
+# -------------------------------------
 
-## ----- Advanced Packaging Tool ----- ##
+# ----- Advanced Packaging Tool ----- #
 
 alias apti='sudo apt-get install'
 alias aptr='sudo apt-get remove'
@@ -18,7 +19,7 @@ alias aptu='sudo apt-get update && \
 
 alias update='aptu'
 
-## ----- Listing ----- ##
+# ----- Listing ----- #
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then
@@ -36,14 +37,14 @@ alias la='ls -laF ${colorflag}'
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
-## ----- Navigation ----- ##
+# ----- Navigation ----- #
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-## ----- Network ----- ##
+# ----- Network ----- #
 
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias localip="ifconfig | \
@@ -52,7 +53,7 @@ alias localip="ifconfig | \
                cut -d: -f2 | \
                cut -d' ' -f1"
 
-## ----- Shortcuts ----- ##
+# ----- Shortcuts ----- #
 
 alias c='clear'
 alias d='cd ~/.dotfiles'
