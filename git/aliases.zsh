@@ -17,6 +17,8 @@ fi
 # The rest of my fun git aliases
 alias g='git'
 alias ga='git add'
+alias gac='git add . && git commit'
+alias gacv='git add . && git commit --verbose'
 alias gap='git add -p'
 alias gb='git branch'
 alias gba='git branch -a'
