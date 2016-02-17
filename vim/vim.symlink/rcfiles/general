@@ -30,6 +30,14 @@ set ttimeout
 set ttimeoutlen=1
 
 " -------------------------------------
+"   Syntax
+" -------------------------------------
+
+" When the type of shell script is /bin/sh, assume a POSIX-compatible shell for
+" syntax highlighting purposes.
+let g:is_posix = 1
+
+" -------------------------------------
 "   Swap Files
 " -------------------------------------
 
