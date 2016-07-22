@@ -1,0 +1,26 @@
+"*":
+  core:
+    disabledPackages: [
+      "exception-reporting"
+      "metrics"
+    ]
+    followSymlinks: false
+    hideGitIgnoredFiles: true
+    ignoredNames: [
+      ".bundle"
+      ".git"
+      "log"
+      "repositories"
+      "tmp"
+      "vendor"
+    ]
+  editor:
+    fontFamily: "Input Mono Condensed"
+    invisibles: {}
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+  "elm-format": {}
+  "linter-elm-make":
+    elmMakeExecutablePath: "/usr/local/bin/elm-make"
+  welcome:
+    showOnStartup: false

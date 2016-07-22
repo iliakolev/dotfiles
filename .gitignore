@@ -1,5 +1,15 @@
-vim/vim.symlink/.netrwhist
-vim/vim.symlink/bundle/
-vim/vim.symlink/autoload/
+atom.symlink/.apm
+atom.symlink/.node-gyp
+atom.symlink/.npm
+atom.symlink/.storage
+atom.symlink/blob-store
+atom.symlink/compile-cache/
+atom.symlink/packages
+atom.symlink/storage
+atom.symlink/themes
 
 git/gitconfig.local.symlink
+
+vim/vim.symlink/.netrwhist
+vim/vim.symlink/autoload/
+vim/vim.symlink/bundle/

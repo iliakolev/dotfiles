@@ -1,0 +1,7 @@
+packages: [
+  "elm-format"
+  "language-elm"
+  "linter"
+  "linter-elm-make"
+  "package-sync"
+]
