@@ -19,8 +19,5 @@
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
-  "elm-format": {}
-  "linter-elm-make":
-    elmMakeExecutablePath: "/usr/local/bin/elm-make"
   welcome:
     showOnStartup: false
