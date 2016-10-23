@@ -31,8 +31,6 @@ setopt HIST_REDUCE_BLANKS
 #   like: git comm-[tab]
 setopt complete_aliases
 
-zle -N newtab
-
 # handy keybindings
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
