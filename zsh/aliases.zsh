@@ -59,7 +59,7 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\
 # ----- Shortcuts ----- #
 
 alias c='clear'
-alias d='cd ~/.dotfiles'
+alias dot='cd ~/.dotfiles'
 alias db='cd ~/Dropbox'
 alias h='history'
 alias k9='kill -9'
