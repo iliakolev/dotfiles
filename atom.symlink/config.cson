@@ -1,6 +1,7 @@
 "*":
   core:
     disabledPackages: [
+      "background-tips"
       "exception-reporting"
       "metrics"
     ]
@@ -14,10 +15,14 @@
       "tmp"
       "vendor"
     ]
+    telemetryConsent: "no"
   editor:
     fontFamily: "Input Mono Condensed"
+    fontSize: 17
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
+  "linter-eslint":
+    useGlobalEslint: true
   welcome:
     showOnStartup: false
