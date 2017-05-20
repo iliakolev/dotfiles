@@ -61,8 +61,10 @@ virtual_env_status() {
   fi
 }
 
-export PROMPT=$'\n$(virtual_env_status)\nin $(directory_name) $(git_dirty)$(need_push)\n› '
-set_prompt () {
+export PROMPT=$'\nin $(directory_name) $(git_dirty)$(need_push)\n$(virtual_env_status)› '
+set_prompt() {
+  # disallow python virtualenvs from updating the prompt
+  export VIRTUAL_ENV_DISABLE_PROMPT=1
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
 
