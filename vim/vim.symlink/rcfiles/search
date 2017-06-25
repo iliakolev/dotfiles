@@ -11,7 +11,6 @@ set ignorecase                  " Case insensitive...
 set smartcase                   " ...except if you use UCase
 
 nmap <F4> :silent noh<CR>
-nnoremap <leader>rh :silent noh<CR>
 
 " quick searching of vimrc files
 function! s:VimrcSearch()
