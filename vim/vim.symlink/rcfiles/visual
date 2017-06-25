@@ -1,21 +1,21 @@
-" *************************************
-"
-"   Visual
-"
-" *************************************
+" Visual settings
+" "----------------
 
-" Hightlight the current row
-set cursorline
-
+" Make it obvious where 80 characters is
 set textwidth=80
-set colorcolumn=+1,+2,+3,+4
+set colorcolumn=+1
 
-set t_Co=256
-let g:solarized_termtrans = 1
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
-set background=dark
-if filereadable(expand("~/.vim/bundle/vim-colors-solarized/colors/solarized.vim"))
-    colorscheme solarized
-endif
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
+
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
+
+colorscheme jellybeans
 
 " vim:ft=vim
