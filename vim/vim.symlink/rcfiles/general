@@ -1,82 +1,52 @@
-" *************************************
-"
-"   General
-"
-" *************************************
+" General Vim Settings
+" --------------------
 
-set noshowmode                    " Hide the mode on last line
-set hidden                        " Allow buffer change w/o saving
-set autoread                      " Reload files changed outside of Vim
-set lazyredraw                    " Don't update while executing macros
-set backspace=indent,eol,start    " Sane backspace behavior
-set history=1000                  " Remember last 1000 commands
-set laststatus=2                  " Always display the status line
-set secure                        " Limit what modelines and autocmds can do
+filetype plugin indent on
 
-set relativenumber
-if v:version > 703
-    set number  " hybrid relative and absolute for current line
-endif
-
-" Disable sound/visual bell on errors
-" May need additional config about audible bell
-set t_vb=
-
-set modeline        " Enable modeline. Disabled by default for security reasons
-set modelines=1     " Set to 1 to allow rcfiles to be recognized as vim files
-
-" Get rid of the delay when hitting esc!
-set ttimeout
-set ttimeoutlen=1
-
-" -------------------------------------
-"   Syntax
-" -------------------------------------
-
-" When the type of shell script is /bin/sh, assume a POSIX-compatible shell for
-" syntax highlighting purposes.
-let g:is_posix = 1
-
-" -------------------------------------
-"   Swap Files
-" -------------------------------------
-
+set backspace=2      " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
 set noswapfile
+set history=50
+set ruler            " show the cursor position all the time
+set showcmd          " display incomplete commands
+set incsearch        " do incremental searching
+set laststatus=2     " Always display the status line
+set autowrite        " Automatically :write before running commands
+set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
 
-" -------------------------------------
-"   Indentation
-" -------------------------------------
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
 
-set autoindent                    " Indent at the same level of the previous line
-set expandtab                     " Convert <tab> to spaces (2 or 4)
-set tabstop=4                     " Four spaces per tab
-set shiftwidth=4                  " Then override with per filteype
-set softtabstop=4                 " Specific settings via autocmd
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
-set list listchars=tab:»·,trail:· " Display extra whitespace
+" Use one space, not two, after punctuation.
+set nojoinspaces
 
-set nowrap                        " Don't wrap lines
-set linebreak                     " Wrap at convenient points
+" Display relative line numbers, with absolute line number for current line
+set number
+set numberwidth=5
+set relativenumber
 
-set nojoinspaces                  " Use one space, not two, after punctuation
+" When the type of shell script is /bin/sh, assume a POSIX-compatible
+" shell for syntax highlighting purposes.
+let g:is_posix = 1
 
-" -------------------------------------
-"   Scrolling
-" -------------------------------------
+" Set spellfile to location that is guaranteed to exist, can be symlinked to
+" Dropbox or kept in Git.
+set spellfile=$HOME/.vim-spell-en.utf-8.add
 
-set scrolloff=4                   " Keep at least 4 lines below cursor
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
 
-" -------------------------------------
-"   Undo
-" -------------------------------------
+" Always use vertical diffs
+set diffopt+=vertical
 
-let undodir = expand('~/.undo-vim')
-if !isdirectory(undodir)
-    call mkdir(undodir)
-endif
-set undodir=~/.undo-vim
-set undofile  " Create FILE.un~ files for persistent undo
+" Don't require saving before closing a buffer
+set hidden
 
-" vi:ft=vim
+" vim:ft=vim
