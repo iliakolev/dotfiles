@@ -1,9 +1,9 @@
-" *************************************
-"
-"   Statusline
-"
-" *************************************
-
-set laststatus=2 " Always show the statusline
+set statusline=\ %f " Path to the file
+set statusline+=\ %m " Modified flag
+set statusline+=\ %y " Filetype
+set statusline+=%= " Switch to the right side
+set statusline+=%l " Current line
+set statusline+=/%L " Total lines
+set statusline+=\ -\ %{ALEGetStatusLine()}\
 
 " vim:ft=vim

@@ -11,6 +11,7 @@ set autoread                      " Reload files changed outside of Vim
 set lazyredraw                    " Don't update while executing macros
 set backspace=indent,eol,start    " Sane backspace behavior
 set history=1000                  " Remember last 1000 commands
+set laststatus=2                  " Always display the status line
 set secure                        " Limit what modelines and autocmds can do
 
 set relativenumber
