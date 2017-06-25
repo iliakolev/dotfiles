@@ -24,6 +24,9 @@ nnoremap <leader>df :Files ~/.dotfiles/<cr>
 nnoremap <leader>; :
 nmap <leader>bi :PlugInstall<cr>
 
+" Q for Ex mode is useless. This will run the macro in q register
+nnoremap Q @q
+
 " Swap 0 and ^. I tend to want to jump to the first non-whitespace character
 " so make that the easier one to do.
 nnoremap 0 ^
