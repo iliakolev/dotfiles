@@ -1,57 +1,25 @@
-" *************************************
+" Vimrc
 "
-"   .vimrc
-"
-" *************************************
+" This file contains the minimal settings to set the foundation, with the
+" majority of the configuration and settings living in files spread between
+" vim/rcfiles and vim/rcplugins
 
-" Want to set this before any others
+set nocompatible
+
+" Need to set the leader before defining any leader mappings
 let mapleader = "\<Space>"
 
 function! s:SourceConfigFilesIn(directory)
-    let directory_splat = '~/.vim/' . a:directory . '/*'
-    for config_file in split(glob(directory_splat), '\n')
-        if filereadable(config_file)
-            execute 'source' config_file
-        endif
-    endfor
+  let directory_splat = '~/.vim/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
 endfunction
-
-" -------------------------------------
-"   Setup vim-plug to manage my plugins
-" -------------------------------------
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall
-endif
-
-" -------------------------------------
-"   Plugins are each listed in their own file. Loop and source ftw
-" -------------------------------------
 
 call plug#begin('~/.vim/bundle')
 call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
 
-" -------------------------------------
-"   Vimrc is split accross multiple files, so loop over and source each
-" -------------------------------------
-
 call s:SourceConfigFilesIn('rcfiles')
-
-" -------------------------------------
-"   Local
-" -------------------------------------
-
-" ----- Everything ----- "
-
-if filereadable( expand('~/.vimrc.local') )
-  source ~/.vimrc.local
-endif
-
-" ----- Per Project ----- "
-
-if filereadable( glob('.vimrc.local') )
-  source .vimrc.local
-endif
