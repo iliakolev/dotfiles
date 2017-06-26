@@ -31,18 +31,4 @@ Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType    = '<C-n>'
 let g:SuperTabCrMapping                = 0
 
-" -------------------------------------
-"   UltiSnips
-"   -> snippet solution for Vim
-" -------------------------------------
-
-Plug 'SirVer/ultisnips'
-
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-
-nnoremap <leader>ue :UltiSnipsEdit<cr>
-
 " vim:ft=vim
