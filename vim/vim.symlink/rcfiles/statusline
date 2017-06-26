@@ -4,6 +4,9 @@ set statusline+=\ %y " Filetype
 set statusline+=%=   " Switch to the right side
 set statusline+=%l   " current line
 set statusline+=/%L  " Total lines
-set statusline+=\ -\ %{ALEGetStatusLine()}\
+
+if isdirectory(expand('~/.vim/plugged/ale'))
+  set statusline+=\ -\ %{ALEGetStatusLine()}\
+ endif
 
 " vim:ft=vim

@@ -22,6 +22,8 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-colorscheme jellybeans
+if isdirectory(expand('~/.vim/plugged/jellybeans.vim'))
+  colorscheme jellybeans
+endif
 
 " vim:ft=vim
