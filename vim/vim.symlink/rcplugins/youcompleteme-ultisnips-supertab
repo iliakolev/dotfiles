@@ -21,14 +21,4 @@ let g:ycm_filetype_blacklist = {}
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
-" -------------------------------------
-"   Supertab
-"   -> enhanced tab behavior based on context
-" -------------------------------------
-
-Plug 'ervandew/supertab'
-
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-
 " vim:ft=vim
