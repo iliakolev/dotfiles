@@ -93,6 +93,8 @@ bind-key ! run-shell '(tmux switch-client -l || tmux switch-client -n) && tmux k
 is_synched='[[ $(tmux show-window-options -v synchronize-panes) == "on" ]]'
 bind-key S if-shell "$is_synched" "set-window-option synchronize-panes off" "set-window-option synchronize-panes on"
 
+set -g display-panes-time 350
+
 # ----------------------------------------------------
 #   Status Bar
 # ----------------------------------------------------
@@ -123,8 +125,8 @@ bind-key ] paste-buffer
 # Increase scrollback lines
 set -g history-limit 10000
 
-# Disabled mouse
-setw -g mode-mouse off
+# Enable mouse
+set -g mouse on
 
 # prefix -> back-one-character
 bind-key C-b send-prefix
