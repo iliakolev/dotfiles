@@ -10,45 +10,80 @@
     co = checkout
     count = !git shortlog -sn
 
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = true
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
 
 [core]
+    # Use custom `.gitignore`
     excludesfile = ~/.gitignore
+
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
     autocrlf = false
+
     # jump to the first line when writing/editing a commit message
     editor = vim -c ':normal gg'
+
+    # Speed up commands involving untracked files such as `git status`.
+    # https://git-scm.com/docs/git-update-index#_untracked_cache
+    untrackedCache = true
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
+
+[color "status"]
+    added = yellow
+    changed = red
+    untracked = cyan
 
 [commit]
     template = ~/.gitmessage
 
-[fetch]
-    prune = true
-
-[rebase]
-    autosquash = true
-
-[merge]
-    ff = only
-
-[apply]
-    whitespace = nowarn
-
-[mergetool]
-    tool = vimdiff
+[diff]
+    # Detect copies as well as renames
+    renames = copies
 
 [difftool]
     prompt = false
 
+[fetch]
+    prune = true
+
 [help]
+    # Automatically correct and execute mistyped commands
     autocorrect = 1
 
+[merge]
+    ff = only
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true
+
+[mergetool]
+    tool = vimdiff
+
 [push]
-    # See `git help config` (search for push.default)
-    # for more information on different options of the below setting.
-    #
-    # Setting to git 2.0 default to suppress warning message
-    default = current
+    # https://git-scm.com/docs/git-config#git-config-pushdefault
+    default = simple
+    # Make `git push` push relevant annotated tags when pushing branches out.
+    followTags = true
+
+[rebase]
+    autosquash = true
+
+[user]
+    email = iliakolev@users.noreply.github.com
