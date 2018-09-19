@@ -28,12 +28,13 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
-# Disable the over-the-top focus ring animation
-defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
+
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
