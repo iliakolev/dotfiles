@@ -98,6 +98,10 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # Transmission.app                                                            #
 ###############################################################################
 
+# Use `~/Documents/Torrents` to store incomplete downloads
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+
 # Trash original torrent files
 defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
