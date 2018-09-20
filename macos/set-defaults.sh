@@ -37,9 +37,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Show language menu in the top right corner of the boot screen
-sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
-
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
@@ -89,3 +86,10 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
+
+###############################################################################
+# Terminal                                                                    #
+###############################################################################
+
+# Disable the annoying line marks
+defaults write com.apple.Terminal ShowLineMarks -int 0
