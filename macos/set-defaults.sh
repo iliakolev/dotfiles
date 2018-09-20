@@ -93,3 +93,10 @@ defaults write com.apple.dock autohide -bool true
 
 # Disable the annoying line marks
 defaults write com.apple.Terminal ShowLineMarks -int 0
+
+###############################################################################
+# Transmission.app                                                            #
+###############################################################################
+
+# Trash original torrent files
+defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
