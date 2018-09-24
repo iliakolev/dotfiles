@@ -12,6 +12,7 @@ brew 'ack'
 brew 'git'
 brew 'imagemagick'
 brew 'wget'
+brew 'nginx'
 
 cask 'firefox'
 cask 'google-chrome'
