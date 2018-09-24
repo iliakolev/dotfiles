@@ -13,6 +13,7 @@ brew 'git'
 brew 'imagemagick'
 brew 'wget'
 brew 'nginx'
+brew 'pyenv'
 
 cask 'firefox'
 cask 'google-chrome'
