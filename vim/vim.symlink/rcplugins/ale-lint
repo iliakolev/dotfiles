@@ -1,6 +1,6 @@
 " ALE - Asynchronous linting engine, checks files as you work
 
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'tag': 'v1.7.1' }
 
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
