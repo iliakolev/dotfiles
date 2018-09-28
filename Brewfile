@@ -15,6 +15,7 @@ brew 'wget'
 brew 'nginx'
 brew 'pyenv'
 brew 'tmux'
+brew 'the_silver_searcher'
 
 cask 'appcleaner'
 cask 'spectacle'
