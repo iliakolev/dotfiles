@@ -20,7 +20,7 @@ fi
 # List all files colorized in long format
 alias l='ls -1F ${colorflag}'
 
-# List all files colorized in long format, including dot files
+# List all files colorized in long format, excluding . and ..
 alias la='ls -lAF ${colorflag}'
 
 # List only directories
