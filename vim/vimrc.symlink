@@ -4,6 +4,7 @@
 " majority of the configuration and settings living in files spread between
 " vim/rcfiles and vim/rcplugins
 
+set encoding=utf-8
 set nocompatible
 
 " Need to set the leader before defining any leader mappings
