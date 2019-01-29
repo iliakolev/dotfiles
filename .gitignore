@@ -1,12 +1,16 @@
-atom.symlink/.apm
-atom.symlink/.node-gyp
-atom.symlink/.npm
-atom.symlink/.storage
-atom.symlink/blob-store
-atom.symlink/compile-cache/
-atom.symlink/packages
-atom.symlink/storage
-atom.symlink/themes
+!tags/
+*.pyc
+.DS_Store
+.bundle
+.env
+.git/
+/bower_components/
+/log
+/node_modules/
+/tmp
+log/*.log
+tags
+tmp/**/*
 
 git/gitconfig.local.symlink
 
