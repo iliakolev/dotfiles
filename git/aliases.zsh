@@ -44,6 +44,7 @@ alias gp='git push'
 alias gpo='git push origin'
 alias gpom='git push origin master'
 alias gpnf='git push --no-verify'
+alias grp='git pull --rebase && git push'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gst='git stash save'
 alias gsth='git stash show'
