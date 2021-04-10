@@ -6,14 +6,6 @@
 # *************************************
 
 
-# Use `hub` as our git wrapper:
-#   http://defunkt.github.com/hub/
-hub_path=$(which hub)
-if (( $+commands[hub] ))
-then
-  alias git=$hub_path
-fi
-
 # The rest of my fun git aliases
 alias g='git'
 alias ga='git add'
@@ -27,8 +19,10 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gce='git commit --amend'
 alias gcv='git commit --verbose'
+
 # Remove `+` and `-` from start of diff lines; just rely upon color.
 alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
+
 alias gds='git diff --stat'
 alias gdt='git difftool'
 alias gfb='git checkout -b'
