@@ -18,7 +18,6 @@ brew 'tmux'
 brew 'the_silver_searcher'
 
 cask 'appcleaner'
-cask 'spectacle'
 cask 'firefox'
 cask 'google-chrome'
 cask 'transmission'
