@@ -16,6 +16,7 @@ brew 'nginx'
 brew 'pyenv'
 brew 'tmux'
 brew 'the_silver_searcher'
+brew 'direnv'
 
 cask 'appcleaner'
 cask 'firefox'
