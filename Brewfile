@@ -1,4 +1,3 @@
-
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
@@ -17,8 +16,9 @@ brew 'nginx'
 brew 'pyenv'
 brew 'tmux'
 brew 'the_silver_searcher'
-brew 'direnv'
 brew 'stripe/stripe-cli/stripe'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 
 cask 'appcleaner'
 cask 'firefox'
