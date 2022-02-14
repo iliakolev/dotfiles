@@ -19,6 +19,7 @@ brew 'the_silver_searcher'
 brew 'stripe/stripe-cli/stripe'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'gnupg'
 
 cask 'appcleaner'
 cask 'firefox'
