@@ -22,6 +22,7 @@ brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'gnupg'
 brew 'hashicorp/tap/packer'
+brew 'hashicorp/tap/terraform'
 
 cask 'appcleaner'
 cask 'firefox'
