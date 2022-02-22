@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'stripe/stripe-cli'
+tap 'hashicorp/tap'
 
 brew 'coreutils'
 brew 'vim'
@@ -20,6 +21,7 @@ brew 'stripe/stripe-cli/stripe'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'gnupg'
+brew 'hashicorp/tap/packer'
 
 cask 'appcleaner'
 cask 'firefox'
